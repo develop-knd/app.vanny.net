@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-vtab',
@@ -6,10 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./vtab.component.scss']
 })
 export class VtabComponent implements OnInit {
-
-@Input() tabs!:string[];
+  @ViewChild('tabEspace') tabEspace!: ElementRef;
+  @Input() tabs!: string[];
 
   constructor() { }
+
+  ngAfterViewInit() {
+    console.log(tabEspace)
+  }
+
 
   ngOnInit(): void {
 
