@@ -1,0 +1,32 @@
+<div class="m-2">
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Builder</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Aplicaciones</li>
+        </ol>
+    </nav>
+
+
+    <div class="btn-toolbar">
+        <h1>Aplicaciones</h1>
+        <button type="button" class="btn btn-sm btn-outline-success">
+            <i class="fas fa-sync"></i>
+        </button>
+        <div class="dropdown" style="display: none;">
+            <button class="dropdown-toggle btn btn-secondary btn-sm" data-bs-toggle="dropdown">Acciones</button>
+            <div class="dropdown-menu">
+                <a routerLink="builder" class="dropdown-item">Builder</a>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm">Crear servicio</button>
+        <button type="button" class="btn btn-sm btn-outline-dark">
+            <i class="fas fa-cog"></i>
+        </button>
+    </div>
+
+    <app-vtable class="card" [resource]="'sys.app'" [fields]="['_id', 'code', 'label']" linkField="label" linkRef="builder/:code">
+    </app-vtable>
+
+
+</div>

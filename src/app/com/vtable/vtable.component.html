@@ -1,0 +1,15 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col" *ngFor="let field of fields">{{field}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td *ngFor="let field of fields">
+        <span *ngIf="field != linkField" (click)="onCellClick(item, field)">{{item[field]}}</span>
+        <a *ngIf="field == linkField" (click)="onCellClick(item, field)" href="javascript:void">{{item[field]}}</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

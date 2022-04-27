@@ -1,0 +1,7 @@
+{
+    "/*": {
+        "target": "https://ga11v3dga7.execute-api.us-east-1.amazonaws.com",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
