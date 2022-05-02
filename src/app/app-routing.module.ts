@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ApaComponent } from './builder/apa/apa.component';
+import { FrmComponent } from './builder/frm/frm.component';
 import { BuilderComponent } from './builder/builder.component';
 import { FxComponent } from './builder/fx/fx.component';
 import { SrvComponent } from './builder/srv/srv.component';
@@ -11,6 +12,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 const routes: Routes = [
   { path: 'facturacion', component: FacturacionComponent },
   { path: 'perfil', component: PerfilComponent },
+  { path: 'builder/:apa/frm/:frm', component: FrmComponent },
   { path: 'builder/:apa', component: ApaComponent, children: [
     { path: 'fx', component: FxComponent },
     { path: 'task', component: TaskComponent },

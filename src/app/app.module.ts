@@ -22,6 +22,7 @@ import { FxComponent } from './builder/fx/fx.component';
 import { SrvComponent } from './builder/srv/srv.component';
 import { ApaComponent } from './builder/apa/apa.component';
 import { VtabComponent } from './com/vtab/vtab.component';
+import { FrmComponent } from './builder/frm/frm.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { VtabComponent } from './com/vtab/vtab.component';
     SrvComponent,
     ApaComponent,
     VtabComponent,
+    FrmComponent,
   ],
   imports: [
     BrowserModule,

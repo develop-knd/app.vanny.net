@@ -27,7 +27,7 @@ export class VtableComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource = new CrudDataSource(this.crudSvc);
     this.dataSource.loadData(this.resource, this.fields);
-    this.crudSvc.callGet("sys.app", this.fields).subscribe((res) => { this.data = res })
+    this.crudSvc.callGet("sys.app", this.fields).subscribe((res:any) => { this.data = res })
   }
 
   onCellClick(item: any, field: string) {

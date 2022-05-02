@@ -51,52 +51,23 @@
     <app-vtab [tabs]="['Formularios', 'Funciones', 'Tareas']">
         <!--Formularios-->
         <div>
-            <div class="d-flex mb-1">
-                <button type="button" class="btn btn-primary btn-sm me-2">Crear formulario</button>
-                <div class="dropdown">
-                    <button class="dropdown-toggle btn btn-secondary btn-sm"
-                        data-bs-toggle="dropdown">Acciones</button>
-                    <div class="dropdown-menu">
-                        <a routerLink="builder" class="dropdown-item">Editar</a>
-                        <a routerLink="builder" class="dropdown-item">Eliminar</a>
-                    </div>
-                </div>
+            <div class="btn-toolbar">
+                <button type="button" class="btn btn-primary btn-sm" (click)="onCrearFrm()">Crear formulario</button>
             </div>
-            <app-vtable>
+            <app-vtable [resource]="'sys.app'" [fields]="['_id', 'code', 'label']" linkField="label" linkRef="builder/:code">
             </app-vtable>
         </div>
         <!--Funciones-->
         <div>
-            <div class="d-flex mb-1">
-                <button type="button" class="btn btn-primary btn-sm me-2">Crear función</button>
-                <div class="dropdown">
-                    <button class="dropdown-toggle btn btn-secondary btn-sm"
-                        data-bs-toggle="dropdown">Acciones</button>
-                    <div class="dropdown-menu">
-                        <a routerLink="builder" class="dropdown-item">Editar</a>
-                        <a routerLink="builder" class="dropdown-item">Eliminar</a>
-                    </div>
-                </div>
-            </div>
-            <app-vtable>
-            </app-vtable>
+            Funciones
         </div>
         <!--Tareas-->
         <div>
-            <div class="d-flex mb-1">
-                <button type="button" class="btn btn-primary btn-sm me-2">Crear tarea</button>
-                <div class="dropdown">
-                    <button class="dropdown-toggle btn btn-secondary btn-sm"
-                        data-bs-toggle="dropdown">Acciones</button>
-                    <div class="dropdown-menu">
-                        <a routerLink="builder" class="dropdown-item">Editar</a>
-                        <a routerLink="builder" class="dropdown-item">Eliminar</a>
-                    </div>
-                </div>
-            </div>
-            <app-vtable>
-            </app-vtable>
+            Tareas
         </div>
     </app-vtab>
+    
+    
+    
 
 </div>
