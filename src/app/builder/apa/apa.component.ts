@@ -22,8 +22,8 @@ export class ApaComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.apa = params["apa"];
-      this.nombre = "Prueba";
-    })
+      this.nombre = "";
+    });
   }
   
   onCrearFrm():void {
@@ -39,6 +39,7 @@ export class ApaComponent implements OnInit {
       ]
     }, (res:any) => {
       if (res.ret == "ok") {
+        
         //window.location.href = "builder/APA/frm/NOMBRE";
         //this.router.navigate(["../builder", this.apa, "frm", "formualrio"]);
         
@@ -46,7 +47,6 @@ export class ApaComponent implements OnInit {
         const routerService = this.injector.get(Router);
         const ngZone = this.injector.get(NgZone);
         ngZone.run(() => {
-          //routerService.navigate(['/error'], { skipLocationChange: true });
           routerService.navigate(["../builder", this.apa, "frm", "formualrio"]);
         });
         

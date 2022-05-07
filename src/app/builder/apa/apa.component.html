@@ -1,49 +1,51 @@
-<div class="m-3">
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a routerLink="../builder">Builder</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{nombre}}</li>
-        </ol>
-    </nav>
-
-
-    <div class="btn-toolbar">
-        <h1>{{nombre}}</h1>
-        <button type="button" class="btn btn-sm btn-outline-success">
-            <i class="fas fa-sync"></i>
-        </button>
-        <div class="dropdown" style="display: none;">
+<nav class="navbar navbar-light bg-light" style="text-align:left; ">
+  <a class="navbar-brand ms-2"> 
+    <ol class="breadcrumb" style="margin:0px; ">
+        <li class="breadcrumb-item"><a routerLink="../builder">Builder</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{nombre}}</li>
+    </ol>
+  </a>
+  <form>
+        <div class="dropdown me-2" style="display: none;">
             <button class="dropdown-toggle btn btn-secondary btn-sm" data-bs-toggle="dropdown">Acciones</button>
             <div class="dropdown-menu">
                 <a routerLink="builder" class="dropdown-item">Builder</a>
             </div>
         </div>
-        <button type="button" class="btn btn-primary btn-sm">Ejecutar</button>
-        <button type="button" class="btn btn-sm btn-outline-dark">
-            <i class="fas fa-cog"></i>
+        <button type="button" class="btn me-2 btn-primary btn-sm">Ejecutar</button>
+        <button type="button" class="btn me-2 btn-sm btn-outline-dark">
+            <i class="fas fa-cog"></i> Editar
         </button>
-    </div>
+  </form>
+</nav>
 
+
+
+
+
+<div class="m-3">
+    
     <div class="card w100 mb-2">
         <div class="card-body">
-
-
             <div class="mb-1 row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                <label for="staticEmail" class="col-sm-2 col-form-label">Proyecto</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail"
-                        value="email@example.com">
+                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{nombre}}">
                 </div>
             </div>
             <div class="mb-1 row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <label for="staticEmail" class="col-sm-2 col-form-label">Interno</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword">
+                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{apa}}">
                 </div>
             </div>
-
-
+            <div class="mb-1 row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">DescripciOn</label>
+                <div class="col-sm-10">
+                    <textarea readonly class="form-control-plaintext">{{nombre}}</textarea>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -51,8 +53,14 @@
     <app-vtab [tabs]="['Formularios', 'Funciones', 'Tareas']">
         <!--Formularios-->
         <div>
-            <div class="btn-toolbar">
+            <div>
                 <button type="button" class="btn btn-primary btn-sm" (click)="onCrearFrm()">Crear formulario</button>
+                <div class="btn dropdown">
+                    <button class="dropdown-toggle btn btn-secondary btn-sm" data-bs-toggle="dropdown">Acciones</button>
+                    <div class="dropdown-menu">
+                        <a routerLink="builder" class="dropdown-item">Builder</a>
+                    </div>
+                </div>
             </div>
             <app-vtable [resource]="'sys.app'" [fields]="['_id', 'code', 'label']" linkField="label" linkRef="builder/:code">
             </app-vtable>

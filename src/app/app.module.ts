@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,7 @@ import { SrvComponent } from './builder/srv/srv.component';
 import { ApaComponent } from './builder/apa/apa.component';
 import { VtabComponent } from './com/vtab/vtab.component';
 import { FrmComponent } from './builder/frm/frm.component';
+import { VblocksComponent } from './com/vblocks/vblocks.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { FrmComponent } from './builder/frm/frm.component';
     ApaComponent,
     VtabComponent,
     FrmComponent,
+    VblocksComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,10 +53,14 @@ import { FrmComponent } from './builder/frm/frm.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+      CUSTOM_ELEMENTS_SCHEMA,
+      NO_ERRORS_SCHEMA
+    ]
 })
 
 export class AppModule {

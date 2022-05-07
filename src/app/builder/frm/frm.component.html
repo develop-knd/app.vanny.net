@@ -1,3 +1,36 @@
-<p>frm works!</p>
-<div id="content-area">
+<nav class="navbar navbar-light bg-light" style="text-align:left; ">
+  <a class="navbar-brand ms-2"> 
+    Nombre
+  </a>
+  <form>
+    <ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link btnDis" (click)="onViewDis()" href="javascript:void(0)">Diseño</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btnAcc" (click)="onViewAcc()" href="javascript:void(0)">Acciones</a>
+    </li>
+  </ul>
+  </form>
+  <form>
+    <button class="btn btn-sm me-2 btn-primary" type="button">Guardar</button>
+    <button class="btn btn-sm me-2 btn-outline-primary" type="button">Volver</button>
+  </form>
+</nav>
+<div id="divDis" style="display:none; ">
+  Diseño
+</div>
+<div id="divAcc" style="display:none; ">
+  <div id="blocklyDiv" style="height: 480px; " class="w100"></div>
+  <xml id="toolboxDiv" style="display: none">
+    <category name="Control">
+      <block type="controls_if"></block>
+    </category>
+    <category name="Logic">
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_boolean"></block>
+    </category>
+  </xml>
+
 </div>
